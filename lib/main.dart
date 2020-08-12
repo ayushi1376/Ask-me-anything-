@@ -8,23 +8,42 @@ void main() {
   );
 }
 
-class BallPage extends StatefulWidget {
-  @override
-  _BallPageState createState() => _BallPageState();
-}
-
-class _BallPageState extends State<BallPage> {
+class BallPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey,
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Ask me anything'),
+        title: Text(
+            'Ask me anything',
+          style: TextStyle(
+              color: Colors.black,
+              fontFamily: 'Source Sans Pro',
+              fontSize: 30.0
+          ),
+        ),
+        backgroundColor: Colors.grey,
       ),
-      body: Container(
+      body: Ball()
+    );
+  }
+}
 
-      ),
+class Ball extends StatefulWidget {
+  @override
+  _BallState createState() => _BallState();
+}
+
+class _BallState extends State<Ball> {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: FlatButton(
+        onPressed:(){
+          print('Pushed the button..');
+        } ,
+        child: Image.asset('images/ball1.png'),)
     );
   }
 }
